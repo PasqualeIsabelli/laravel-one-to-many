@@ -31,6 +31,15 @@
       </div>
 
       <div class="mb-3">
+        <label for="type">Tipo:</label>
+        <select name="type_id" id="type" class="form-select">
+          @foreach ($types as $type)
+            <option value="{{ $type->id }}">{{ $type->type }}</option>
+          @endforeach
+        </select>
+      </div>
+
+      <div class="mb-3">
         <label for="creation_date" class="form-label">Data:</label>
         <input type="date" name="creation_date" class="form-control @error('creation_date') is-invalid @enderror" value="{{ old('creation_date', $project?->creation_date) }}">
         @error('creation_date')

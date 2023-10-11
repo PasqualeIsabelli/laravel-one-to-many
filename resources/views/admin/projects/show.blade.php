@@ -10,6 +10,7 @@
     <div class="mt-3">
       <h5>{{ $project->title }}</h5>
       <p>{{ $project->description }}</p>
+      <span class="badge bg-secondary">{{ $project->type->type }}</span>
       <p class="card-text">{{ 'language', implode(',', $project->language) }}</p>
       <div class="d-flex justify-content-between">
         <a href="{{ $project->link }}" class="text-decoration-none">Link</a>

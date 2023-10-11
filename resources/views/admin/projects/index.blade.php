@@ -10,6 +10,7 @@
             <img src="{{ asset('storage/' . $project->thumb) }}" class="card-img-top">
             <div class="card-body">
               <h5 class="card-title">{{ $project->title }}</h5>
+              <span class="badge bg-secondary">{{ $project->type->type }}</span>
             </div>
           </div>
         </a>

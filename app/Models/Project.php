@@ -22,6 +22,11 @@ class Project extends Model
         'creation_date',
         'link',
         'language',
-        'slug'
+        'slug',
+        'type_id'
     ];
+
+    public function type() {
+        return $this->belongsTo(Type::class);
+    }   
 }
