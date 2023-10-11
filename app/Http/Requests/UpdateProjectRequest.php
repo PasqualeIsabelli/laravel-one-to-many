@@ -28,7 +28,6 @@ class UpdateProjectRequest extends FormRequest
             'creation_date' => 'required|date',
             'link' => 'required|string',
             'language' => 'required|string',
-            'type_id' => 'exists:types,id'
         ];
     }
 
@@ -39,13 +38,13 @@ class UpdateProjectRequest extends FormRequest
      */
     public function messages(): array {
         return [
-            'title.required' => 'Il titolo è obbligatorio',
-            'title.max' => 'La lunghezza del titolo è di massimo 50 caratteri',
-            'description.required' => 'La descrizione è obbligatoria',
-            'thumb.max' => 'La dimensione massima dell\'immagine è di 5MB',
-            'creation_date.required' => 'La data è obbligatoria',
-            'link.required' => 'Il link è obbligatorio',
-            'language.required' => 'La lingua è obbligatoria'
+            'title.required' => 'Il titolo è obbligatorio.',
+            'title.max' => 'La lunghezza del titolo è di massimo 50 caratteri.',
+            'description.required' => 'La descrizione è obbligatoria.',
+            'thumb.max' => 'La dimensione massima dell\'immagine è di 5MB.',
+            'creation_date.required' => 'La data è obbligatoria.',
+            'link.required' => 'Il link è obbligatorio.',
+            'language.required' => 'La lingua è obbligatoria.',
         ];
     }
 }

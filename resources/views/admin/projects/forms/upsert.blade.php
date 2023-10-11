@@ -3,7 +3,7 @@
 
 @section('content')
   <div class="container">
-    <form action="{{ $action }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ $action }}" method="POST" enctype="multipart/form-data" class="mt-5">
       @csrf()
       @method($method)
 
@@ -23,7 +23,8 @@
         @enderror
       </div>
 
-      <div class="input-group mb-3">
+      <div class="mb-3">
+        <label for="thumb" class="form-label">Immagine:</label>
         <input type="file" class="form-control @error('thumb') is-invalid @enderror" name="thumb" accept="image/*">
         @error('thumb')
           <div class="invalid-feedback">{{ $message }}</div>
@@ -31,12 +32,16 @@
       </div>
 
       <div class="mb-3">
-        <label for="type">Tipo:</label>
-        <select name="type_id" id="type" class="form-select">
+        <label for="type" class="form-label">Tipo:</label>
+        <select name="type_id" id="type" class="form-select @error('type_id') is-invalid @enderror">
+          <option hidden>Seleziona il tipo di progetto</option>
           @foreach ($types as $type)
             <option value="{{ $type->id }}">{{ $type->type }}</option>
           @endforeach
         </select>
+        @error('type_id')
+          <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
       </div>
 
       <div class="mb-3">
