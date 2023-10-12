@@ -47,7 +47,7 @@ class StoreProjectRequest extends FormRequest
             'creation_date.required' => 'La data è obbligatoria.',
             'link.required' => 'Il link è obbligatorio.',
             'language.required' => 'La lingua è obbligatoria.',
-            'type_id.required' => 'Il tipo di progetto è obbligatorio.'
+            'type_id.exists' => 'Il tipo di progetto è obbligatorio.'
         ];
     }
 }
